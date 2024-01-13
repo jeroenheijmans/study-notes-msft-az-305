@@ -4,11 +4,17 @@
   // prettier-ignore
   "cSpell.words": [
     "ale",
+    "BCDR",
     "Citus",
     "DTAP",
     "Entra",
     "HADR",
+    "HANA",
     "hyperscale",
+    "MABS",
+    "MTBF",
+    "MTTR",
+    "PITR",
     "VM's",
     "WSFC"
   ]

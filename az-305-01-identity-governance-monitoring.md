@@ -33,9 +33,13 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Role-Based Access Control (RBAC)
       - See [flowchart](./img/az-305-governance-rbac-flowchart.png)
     - Resource locks (override user permissions)
-      - Subscription
-      - Resource group
-      - Resource
+      - Applicable for
+        - Subscription
+        - Resource group
+        - Resource
+      - Variants
+        - CanNotDelete
+        - ReadOnly
   - **Azure Landing Zone** = Architectural decision and design
     - Types: Application Landing Zones Platform Landing Zones
     - Accelerator =n portal-based deployment experience
