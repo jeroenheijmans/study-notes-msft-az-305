@@ -94,3 +94,44 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Premium: encrypted with hardware security module (HSM) keys
     - Separate (e.g. by application is most common)
     - Soft delete and Purge protection
+
+- **Log and Monitor Resources**
+
+  - **Azure Monitor**
+    - Logs and Metrics
+    - Data Sources
+      - Application data (custom app code)
+      - Operating System data (diagnostics, or via monitor logs agent / dependency agent)
+      - Azure resources data (e.g. web app or load balancer)
+      - Subscription data and Azure health
+      - Tenant data and AD
+    - Query logs
+    - Alerts based on Logs and Metrics
+  - **Azure Monitor Log Analytics workspaces**
+    - Tables for organization
+    - Pricing tier, retention, data capping
+    - Access modes
+      - **Workspace-context**: user can review all logs in workspace
+      - **Resource-context**: user can review logs only for tables (and rows) scoped to their resource
+    - **Azure Workbooks** - homebrew prefab analysis
+      - Combine sources
+      - Supports: Logs, Metrics, Resource Graph, Alerts, Workload Health, Resource Health, Data Explorer
+    - **Azure insights** - custom monitoring
+      - Customized monitoring experience
+      - Features of Azure Monitor, e.g.
+        - Application Insights (APM for web apps)
+        - Container Insights (e.g. AKS clusters)
+        - Network Insights
+        - Resource Group Insights
+        - VM Insights
+        - etc.
+  - **Microsoft Sentinel**
+    - Security Information and Event Management (SIEM)
+    - Security Orchestration, Automation, and Response (SOAR)
+  - **Azure Data Explorer**
+    - Parts
+      - Azure Data Explorer Unified Analytics Platform
+      - Azure Data Explorer SDKs
+      - Azure Data Explorer Web UI
+    - Integrates with Databricks and Azure ML
+    - Long data retention
