@@ -3,8 +3,13 @@
   "editor.formatOnSave": true,
   // prettier-ignore
   "cSpell.words": [
+    "ale",
+    "Citus",
     "DTAP",
     "Entra",
-    "VM's"
+    "HADR",
+    "hyperscale",
+    "VM's",
+    "WSFC"
   ]
 }

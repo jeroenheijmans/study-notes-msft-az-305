@@ -1,0 +1,59 @@
+# AZ-305: Business Continuity
+
+All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/) starting point.
+
+- **High Availability and Disaster Recovery** (HADR)
+
+  - Recovery Time Objective: maximum time available to recover
+  - Recovery Point Objective: maximum data loss after recovery
+  - **IaaS HADR**
+    - **SQL Server HADR**
+      - **Always on Failover Cluster Instance (FCI)**
+        - protects instance
+        - also captures things outside the database
+        - Unique-name and load balancer based
+        - One database copy on shared storage (e.g. Azure Premium File Share)
+        - Operating System HADR for SQL Server deployments
+          - Windows Server Failover Cluster (WSFC)
+          - Linux Pacemaker
+      - **Always On Availability Group (AG)**
+        - protects database
+        - does not capture things outside the database
+        - primary read/write replica
+        - secondary replica's synchronized by transporting logs
+        - Standard Edition has 1 primary + 1 secondary replica
+        - Enterprise Edition has 1 primary + 8 secondary (max)
+      - **Log Shipping**
+        - protects database
+        - oldest HADR method
+        - full backup, restore on secondary, which receives log backups
+    - **Virtual Machine HADR**
+      - **Availability Sets**
+        - Requires Internal Load Balancer (ILB)
+        - Guarantees running on different physical servers
+        - Fault Domain separation (hardware failures, network outages, power interruptions)
+        - Update Domain separation (groups that can be rebooted together)
+      - **Availability Zones**
+        - Requires Internal Load Balancer (ILB)
+        - Guarantees running in different data centers (same region)
+        - Mutually exclusive with Availability Sets
+        - Typically 1ms latency
+      - **Azure Site Recovery**
+        - Guarantees replica in different region
+        - Monthly RTO of 2 hours
+        - No transaction guarantees for VM's running SQL Server
+  - **PaaS HADR**
+    - SQL Server
+      - Active geo-replication (Azure SQL Database)
+      - Auto-failover Groups (Azure SQL Database or Azure SQL Database Managed Instance)
+    - Azure Database for MySQL
+      - SLA: 99.99 availability
+      - Node-level (e.g. hardware issues): built-in failover mechanism
+    - Azure Database for PostgreSQL
+      - Similar to MySQL
+      - Scale-out hyperscale "Citus" is another option (creates replicas, so more expensive)
+  - **Hybrid HADR**
+    - Transactional Replication from on-premises to Azure SQL Managed Instance (but not other way around)
+    - Availability Group between on premises and in Azure
+      - needs ExpressRoute or site-to-site VPN
+      - needs AD DS and DNS set up
