@@ -3,6 +3,7 @@
 All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/) starting point.
 
 - **Governance**
+
   - Hierarchy
     - **Tenant root group** = container, allowing global policies and roles
     - **Management Groups** (6 levels) = manage access, policy, compliance
@@ -12,7 +13,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - **Subscriptions** = logical grouping, billing boundary
       - Consider a subscription per DTAP environment
       - Virtual Networks can't be shared across subscriptions
-    - **Resource Groups** = logical grouping, *metadata* in one region
+    - **Resource Groups** = logical grouping, _metadata_ in one region
       - Cannot be nested
       - Cannot be renamed
       - Grouped creation or deletion of resources
@@ -22,7 +23,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - **Resources** = instances of services
       - Each resource is in exactly one resource group
       - Tags = name-value pairs
-  - Strategies
+  - **Strategies**
     - Azure policies
       - Control and/or audit resources
       - Inherited through hierarchy
@@ -35,6 +36,61 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Subscription
       - Resource group
       - Resource
-  - Azure Landing Zone = Architectural decision and design
+  - **Azure Landing Zone** = Architectural decision and design
     - Types: Application Landing Zones Platform Landing Zones
     - Accelerator =n portal-based deployment experience
+
+- **Authentication and Authorization**
+
+  - **Identity and Access Management (IAM)**
+    - Microsoft Entra ID basics
+      - Multi-tenant
+      - Cloud-based directory services
+      - Application access management
+      - Identity protection
+      - Cloud-only vs Hybrid (extending on-premises Active Directory)
+        - Microsoft Entra Connect
+        - Microsoft Entra Connect cloud sync
+  - **Microsoft Entra B2B**
+    - Invite External Identities as Guest users
+    - Conditional Access policies based on extra factors
+    - Optionally enable MFA
+  - **Azure AD B2C** (a "type of Microsoft Entra tenant, separate from the Microsoft Entra Tenant)
+    - Custom attributes for customers
+    - Custom sign-in and sign-up experience
+    - User flows support
+    - Optionally store users externally
+  - **Conditional Access** (requires P1 or P2 license)
+    - Actions: allow or deny access, enforce MFA
+    - Conditions: user/group, cloud app, device state, location (ip range), client app, sign-in risk
+    - Report-only mode
+  - **Identity Protection**
+    - Automate detection and remediation
+    - Investigate risks
+    - Export risk detection data
+    - Risk policies
+      - User risk (is account compromised?)
+      - Sign-in risk (suspicious sign-in?)
+  - **Access Review**
+    - Check if access is still needed by
+      - Resource (business) owners
+      - Delegates that do the reviews
+      - End user (self-attest)
+  - **Security Principals**
+    - User Principal
+    - Service Principal (for app instances) with Application Objects ("definition" for an app)
+      - Application Service Principal = local representation in a specific tenant
+      - Managed Identity (with Client ID and Object ID)
+      - Legacy Service Principal (might have credentials)
+  - **Managed Identities**
+    - Types
+      - System-assigned (automatically created by Azure for your resource)
+      - User-assigned (by an admin, can be assigned to multiple instances of an Azure service)
+    - Combine with Azure Key Vault
+  - **Azure Key Vault**
+    - Manage secrets, keys, certificates
+    - Tiers
+      - Standard: encrypted with software key
+      - Premium: encrypted with hardware security module (HSM) keys
+    - Separate (e.g. by application is most common)
+    - Soft delete and Purge protection
