@@ -80,6 +80,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Supports Azure Container Registry
 
 - **Application Architecture**
+
   - **Messages**
     - Raw data itself in messages
     - Expectations between producer and consumer
@@ -180,3 +181,117 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Encryption at rest and in transit
       - Complements Azure Key Vault
       - Poll for changes or use Azure Event Grid
+
+- **Network Solutions**
+  - Network requirements (naming, regions, subscriptions, IP addresses, segmentation and subnets, filtering)
+  - Workload requirements (CIDR ranges, network security groups, network traffic routing)
+  - IP range for Virtual Networks /16 or larger
+  - Consider hub-spoke network topology
+  - **Azure Firewall** (works across Azure Virtual Network and subscriptions)
+  - Network design options
+    - **Pattern 1: Single Virtual Network**
+      - Single-region only
+      - Network Security Groups or Application Security Groups
+      - Subnets to e.g. separate workload types
+    - **Pattern 2: Multiple Virtual Networks with Peering**
+      - Segment based on Virtual Network
+      - Peer networks across regions (peering isn't transitive!)
+      - Allows for Pattern 1 options as well
+    - **Pattern 3: Multiple Virtual Networks in hub-spoke topology**
+      - One Virtual Network is the hub in a region
+      - Connect spokes to their hub with peering
+      - Connect hubs across regions with peering
+  - **Routing**
+    - Route Tables
+      - System Routes (can't be modified, can be overridden with UDRs)
+        - Traffic between VM's
+        - Virtual network-to-network VPN for VM's
+        - Site-to-site through Azure ExpressRoute or Azure VPN Gateway
+      - User-defined Routes, a.k.a. custom routes
+        - Filtering of internet traffic or forced tunneling
+        - Flow traffic through NVA
+        - Define routes to direct traffic and hops
+      - Routes from other Virtual Networks (when peering networks)
+      - Border Gateway Protocol routes (when on-premises network gateway exchanges BGP routes)
+      - Service endpoint routes (when enabling a service endpoint in a subnet)
+    - Azure Virtual Network NAT
+      - Fully managed, highly resilient
+      - All outbound connectivity through specified static public IP addresses
+      - No load balancer or public IP for VM's needed
+  - Connect on-premises to Azure
+    - **Azure VPN Gateway**
+      - Encrypted traffic between Azure Virtual Network and on-premises network
+      - Over the public internet
+      - Configuration options
+        - Site-to-site
+        - Point-to-site
+        - Virtual network-to-network
+    - **Azure ExpressRoute**
+      - Private (not over the internet), dedicated connection
+      - Requires third-party connectivity provider
+      - Can be used with "VPN Failover"
+    - **Azure Virtual WAN**
+      - Hubs as managed service
+      - Virtual Network Connections to Azure
+      - Relies on hub-spoke network topology
+      - Supports ExpressRoute and VPN Gateway
+  - **Load balancing** ([see flowchart](./img/az-305-infrastructure-load-balancing-flowchart.png))
+    - Aspects
+      - Traffic type https? Public or private facing?
+      - Global vs regional?
+      - Availability and SLA
+      - Cost
+      - Features and limits
+    - Options
+      - **Azure Content Delivery Network**
+        - For high-bandwidth content
+        - Global solution
+        - Supports Microsoft, Akamai, Verizon networks
+        - Supports custom domains, file compression, caching, geo-filtering
+      - **Azure Front Door**
+        - Low-latency, prioritization, weighted distribution, affinity, WAF and CDN integration
+        - Global (multi-region) failover
+      - **Azure Traffic Manager**
+        - DNS-based traffic load balancer
+        - Distribute traffic across regions
+        - High Availability
+        - Prioritization, weighted distribution, performance-based, geographic, subnet-based
+        - Usually not for HTTPS traffic ([see flowchart](./img/az-305-infrastructure-load-balancing-flowchart.png))
+      - **Azure Load Balancer**
+        - Layer 4 load-balancing (UDP and TCP)
+        - High performance, low-latency
+        - Map inbound connections to back-end pool destinations
+        - Not global (so may need to be combined with Traffic Manager)
+      - **Azure Application Gateway**
+        - Layer 7 load-balancing
+        - Web traffic load balancer
+        - Application Delivery Controller (ADC) as a service
+        - Path-based routing and Multiple-site routing
+  - Application Protection Services
+    - **Azure DDoS Protection**
+      - Traffic monitoring and DDoS protection
+      - Support from DDoS rapid response team
+    - **Azure Private Link**
+      - Access Azure hosted customer/partner services
+      - Works over private endpoint in your own Virtual Network via Azure Backbone
+      - Prevents traffic needing to go over the public internet
+    - **Azure Firewall**
+      - Managed network security service with High Availability
+      - Fully stateful firewall as a service
+      - Static public IP address
+      - Inbound protection (also for non-HTTP(S) protocols like RDP and SSH)
+      - Outbound protection for all ports and protocols
+      - Application-level protection for outbound HTTP(S)
+    - **Azure Web Application Firewall**
+      - Protects against common web exploits (e.g. OWASP top 10)
+      - Deploy as part of Application Gateway or Front Door
+    - **Azure Virtual Network Security Groups** (NSGs)
+      - Works towards subnets and/or network interface cards (NICs)
+      - Works with Access Control List (ACL) allow/deny rules
+      - Prioritized inbound/outbound rules
+    - **Service Endpoints** (in Azure Virtual Networks)
+      - Secure Azure service resources to virtual networks
+      - Optimal routing from Azure services to virtual networks
+    - **Azure Bastion**
+      - Managed PaaS to secure RDP and SSH over TLS
+      - Monitor and manage remote connections
