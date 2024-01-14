@@ -4,8 +4,10 @@
   // prettier-ignore
   "cSpell.words": [
     "ale",
+    "autoscaler",
     "BCDR",
     "Citus",
+    "containerizable",
     "DTAP",
     "Entra",
     "HADR",

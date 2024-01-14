@@ -1,0 +1,79 @@
+# AZ-305: Infrastructure
+
+All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions//) starting point.
+
+- **Azure Compute**
+  - Overview (see [flowchart](./img/az-305-infrastructure-compoute-flowchart.png))
+  - **Azure VMs** (IaaS)
+    - Lift and Shift Migrations without containerization
+    - New workloads requiring full control
+    - Classifications (tiers)
+      - General purpose: balanced CPU-to-memory (test and dev, or small-to-medium scenarios)
+      - Compute optimized: high CPU (web servers, network appliances, batch processes)
+      - Memory optimized: high memory (relational database servers, caches, etc)
+      - Storage optimized: high disk throughput and I/O (database servers)
+      - GPU: graphics rendering and video editing, and e.g. deep learning
+      - High performance computes: high CPU and optional high-throughput network (high performance scenarios)
+    - Costs
+      - Compute: priced hourly, billed per minute of use
+      - Storage: charged for Storage used by disks
+    - Operating system (64bit only)
+      - Windows (OS license included)
+      - Linux
+      - Azure Marketplace for OS image with tools (e.g. WordPress)
+  - **Azure Batch** (PaaS)
+    - Cloud optimized HPC workloads (up to thousands of VM's)
+    - Good for parallel workloads
+    - Good for tightly coupled workloads where apps need to communicate
+    - Azure Storage to fetch applications or data
+    - Azure Storage to write output
+    - Can use pooling (allocate pools with multiple nodes and/or isolated VM sizes for guaranteed progress)
+    - Optimize jobs and tasks
+    - Has [best practices guidance](https://learn.microsoft.com/en-us/azure/batch/best-practices)
+  - **Azure App Service** (PaaS)
+    - Cloud optimized HTTP-based service
+    - For web apps, background jobs (WebJobs), mobile backends, REST API's
+    - Supports ASP.NET, ASP.NET Core, Java, Ruby, NodeJS, PHP, Python
+    - Supports Windows or Linux host
+    - Built-in load balancing and traffic management with high availability
+    - Allows for [built-in auth ("Easy Auth")](https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)
+    - Deployment slots for DTAP (Standard App Service Plan or higher)
+    - App Service Plan for costs
+  - **Azure Functions** (FaaS)
+    - Event-driven workloads with short-lived processes (Code First)
+    - C#, Java, JavaScript, PowerShell, Python
+    - Avoid long-running functions
+      - Consumption Plan: 300 second time-out
+      - Other plans: 30 minutes time-out
+    - Durable functions for state and function chaining
+    - Group functions with different load profiles
+    - Defensive coding needed
+    - Separate storage account for each function application
+  - **Azure Logic Apps** (FaaS)
+    - Event-driven workloads with short-lived processes (Design First)
+    - Part of "Azure Integration Services"
+    - Best if it has external connections
+    - Might have slow activation time
+  - **Azure Container Instances** (PaaS)
+    - Cloud-optimized microservices
+    - Lift and shift if your workload can be containerized
+    - Fast startup, per-second billing, persistent storage (e.g. via Azure Files shares)
+    - Container Group (e.g. front-end container grouped with back-end, or app container with monitoring container)
+    - Best practices
+      - Private registry (Docker Trusted Registry or Azure Container Registry)
+  - **Azure Kubernetes Service (AKS)** (PaaS)
+    - Full-fledged orchestration for cloud-optimized containerizable microservices
+    - Container Management (organize and change containers)
+    - Container Orchestration (dynamically adjust number of instances, automatically update running instances)
+    - Scaling options
+      - Horizontal pod autoscaler (to meet increased demand)
+      - Cluster autoscaler (automatically scale cluster nodes)
+    - Utilize ARM templates
+      - networking
+      - Microsoft Entra integration
+      - monitoring
+    - Supports Azure Monitor
+    - Supports Virtual Networks
+    - Supports static and dynamic storage volumes
+    - Supports ingress with HTTP application routing
+    - Supports Azure Container Registry
