@@ -183,6 +183,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Poll for changes or use Azure Event Grid
 
 - **Network Solutions**
+
   - Network requirements (naming, regions, subscriptions, IP addresses, segmentation and subnets, filtering)
   - Workload requirements (CIDR ranges, network security groups, network traffic routing)
   - IP range for Virtual Networks /16 or larger
@@ -295,3 +296,136 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - **Azure Bastion**
       - Managed PaaS to secure RDP and SSH over TLS
       - Monitor and manage remote connections
+
+- **Migrations**
+
+  - **Cloud Adoption Framework** (CAF)
+    - Initial phases
+      - **Define strategy**
+        - Understand motivations
+        - Business outcomes and justification
+        - Prioritize projects
+      - **Plan**
+        - Digital estate
+        - Organization readiness
+        - Skill readiness
+        - Cloud adoption plan
+      - **Ready**
+        - Operating model
+        - Landing zones
+        - Design area guidance
+        - Implementation options
+      - **Adopt**
+        - Migration of workloads
+          - Asses (determine costs, modernization, deployment tools)
+          - Deploy (replicate or improve in the cloud)
+          - Release (after testing release to users)
+        - Modernization
+        - Innovation
+    - Iterative phases
+      - **Secure**
+        - Risk insights
+        - Business resilience
+        - Asset protection
+      - **Manage**
+        - Business commitments
+        - Operations baseline and maturity
+      - **Govern**
+        - Business risks
+        - Policy and compliance
+        - Governance maturity
+  - **Azure Migration Framework**
+    - Stage 1: Assess on-premises environment
+      - Five Rs of Rationalization
+        - **Rehost** a.k.a. "Lift and Shift"
+        - **Refactor** a.k.a. "Repackaging" to be cloud-native, usually with PaaS features
+        - **Rearchitect** modify and extend app functionality to optimize for the cloud
+        - **Rebuild** from scratch, for the cloud with best available tools
+        - **Replace** with newer solutions, considering SaaS and FaaS options
+      - Migration tools and services
+        - **Service Map** (Azure Monitor) to identify dependencies (requires agent on VM's)
+        - **Azure Total Cost of Ownership (TCO) Calculator**
+        - **Azure Migrate** to perform assessment and migration of VM's, servers, databases, etc. with various tools
+        - **Data Migration Assistant (DMA)** for SQL Server migrations
+        - **Database Migration Service** for other database types
+        - **Azure Cosmos DB Data Migration tool**
+        - **Microsoft Cost Management** to monitor and optimize ongoing costs
+        - **Azure Advisor** to monitor resources for reliability, performance, cost, security
+        - **Azure Monitor** for telemetry from both on-premises and Azure resources
+        - **Microsoft Sentinel** for security analytics
+    - Stage 2: Migrate workloads
+      - Deploy cloud infrastructure (optionally with migration tools)
+      - Migrate workloads (with a pilot first)
+        - **Azure Migrate**
+          - Unified platform with single portal
+          - Various assessment and migration tools
+            - Server Migration
+            - SQL Server Data Migration Assistant (DMA)
+            - Azure Database Migration Service
+            - Web app migration assistant
+            - Azure Data Box
+          - Different migration feature per workload
+          - Azure Migrate hub tools
+          - Scenarios
+            - Windows Server
+            - SQL Server
+            - Linux
+            - Windows apps, Java apps, PHP apps
+            - SAP HANA
+            - Specialized compute
+        - **Azure Resource Mover**
+          - Move resources between subscriptions, resource groups, and regions
+          - Test a move before committing
+          - Use _before_ migration to organize resources
+          - Use _after_ migration to optimize organization
+        - **Azure Database Migration Service**
+          - Targets
+            - VM's with SQL Server
+            - Azure SQL Database
+            - Azure SQL Managed Instance
+            - Azure Cosmos DB
+            - Azure Database for MySQL
+            - Azure Database for PostgreSQL
+          - Modes
+            - Online (synchronization and cut over)
+            - Offline (with downtime)
+          - Steps
+            - Step 1: asses databases
+            - Step 2: migrate schema in target
+            - Step 3: migrate data and verify
+          - Requires Virtual Network, NSGs, Azure Windows Firewall, credentials, and target
+        - **Azure Storage Migration Service** (from Windows Admin Center)
+          - Inventory Windows servers
+          - Transfer data
+          - Cut over (optionally)
+        - **Azure File Sync** (part of Azure Files)
+          - Scenarios
+            - Replace or supplement on-premises file servers or NAS devices
+            - Lift and shift (rehome)
+            - Backup and disaster recovery
+            - Azure File Sync for performance and distributed caching
+        - **Azure Import/Export service**
+          - For large quantities of data from on-premises to Azure storage
+          - Physical disks shipped to Azure data center
+          - Requires BitLocker
+          - Requires shipping carrier
+          - Scenarios
+            - Migration (one-time task)
+            - Backup on-premises to Azure Storage
+            - Recovery from Azure Storage
+            - Distribution to customer sites
+        - **Azure Data Box**
+          - 80TB device is sent to your location, back to Data Center
+          - Includes Data Box service (extension of Azure portal)
+          - Shipping handled by Microsoft
+          - Scenarios
+            - Migration (one time)
+            - Initial bulk transfer
+            - Periodic uploads
+      - Decommission on-premises infrastructure when ready
+    - Stage 3: Optimize migrated workloads
+      - Analyze and optimize costs based on recommendations
+      - Improve workload performance
+    - Stage 4: Monitor workloads
+      - Capture health and performance
+      - Set up alerting and reporting
