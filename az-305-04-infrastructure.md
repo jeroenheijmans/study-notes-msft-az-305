@@ -3,6 +3,7 @@
 All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions//) starting point.
 
 - **Azure Compute**
+
   - Overview (see [flowchart](./img/az-305-infrastructure-compoute-flowchart.png))
   - **Azure VMs** (IaaS)
     - Lift and Shift Migrations without containerization
@@ -32,7 +33,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Has [best practices guidance](https://learn.microsoft.com/en-us/azure/batch/best-practices)
   - **Azure App Service** (PaaS)
     - Cloud optimized HTTP-based service
-    - For web apps, background jobs (WebJobs), mobile backends, REST API's
+    - For web apps, background jobs (WebJobs), mobile backends, REST APIs
     - Supports ASP.NET, ASP.NET Core, Java, Ruby, NodeJS, PHP, Python
     - Supports Windows or Linux host
     - Built-in load balancing and traffic management with high availability
@@ -77,3 +78,105 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Supports static and dynamic storage volumes
     - Supports ingress with HTTP application routing
     - Supports Azure Container Registry
+
+- **Application Architecture**
+  - **Messages**
+    - Raw data itself in messages
+    - Expectations between producer and consumer
+    - Allows for guaranteed communication
+    - **Azure Queue Storage**
+      - Large numbers (millions) of messages in Azure Storage
+      - Limited only by Azure Storage Account limits (e.g. over 80 GB)
+      - Increased reliability
+      - Guaranteed message delivery
+      - Transactional support
+    - **Azure Service Bus** (High-value enterprise messaging)
+      - Message broker
+      - Allows load-balancing work
+      - High degree of reliability
+      - Under 80 GB queue storage
+      - Under 64 KB message payload total size (32 KB per property)
+      - Allows FIFO guarantee (with "sessions")
+      - Supports "Auto-forwarding"
+      - Supports Dead-lettering
+      - Message Queues
+        - Message broker on top of Service Bus
+        - Intended for Enterprise Applications
+      - Publish-Subscribe Topics
+        - Multiple subscribers possible
+        - Each subscriber receives a copy of the message
+  - **Events**
+    - Light-weight broadcasts
+    - Publish / Subscribe model
+    - Zero to many subscribers possible
+    - **Azure Event Hubs** (Big Data Pipeline)
+      - Millions of events per second possible
+      - Real-time as well as store for later analysis
+      - Integrates with Apache Storm
+      - Events ordered by receive time, consumers can seek along the stream
+      - Events are kept (until time-o-live expired) even when consumed
+      - No Dead Letter or other similar mechanism
+      - Pricing
+        - Scaling through "purchased throughput units"
+          - Ingress unit = 1MB per second OR 1000 events per second
+          - Egress unit = 2MB per second OR 4096 events per second
+        - Performance per tier (Basic, Standard, Premium)
+      - Ideal for: live dashboarding, supporting clickstreams, detecting anomalies (fraud, or outliers), processing transactions with real-time analysis
+      - Supports many programming languages
+    - **Azure Event Grid** (Reactive programming)
+      - Runs on Azure Service Fabric
+      - Sources like Azure Blog Storage or Azure Media Services
+      - Targets like Azure Functions and Azure DevOps Webhooks
+      - Events contain reference (URL or identifier) to subject
+    - **Azure IoT Hub**
+      - Fully managed service
+      - Bi-directional communications between millions of devices
+      - Secure communications
+      - Hyper-scale communication options
+      - Messaging patterns
+        - Device-to-cloud telemetry
+        - Uploading files from devices
+        - Request-reply methods to control devices from the cloud
+        - Device creation, connection, and failure tracking
+  - **Caching**
+    - **Azure Cache for Redis**
+      - Low-latency, high-throughput
+      - Either Redis Open Source (OSS Redis) or Redis Enterprise (managed)
+      - Multiple functions
+        - Data cache (cache-aside pattern to load data into cache as needed, with expirations or eviction policies)
+        - Content cache (for quick access to static content)
+        - Session store (e.g. user sessions)
+        - Message broker (supports distributed queue)
+        - Distributed transactions (batch of commands in single transaction)
+  - **Azure API Management**
+    - Suitable when you have
+      - Large number of APIs
+      - High rate of API changes
+      - High API administration load (e.g. policies for quotas, rate limits, request transformations and validation)
+      - Need to standardize disparate APIs
+      - Need for enhanced API security
+  - **App Deployments**
+    - **Azure Resource Manager (ARM) templates**
+      - Declarative approach
+      - Idempotent
+      - Deployments in parallel
+      - Supports "WhatIf"
+      - Validated before deployment
+      - Integrates with CI/CD tools
+      - Different formats
+        - JSON templates
+        - Bicep templates (DSL for ARM templates)
+    - **Azure Automation**
+      - Cloud-based automation and configuration
+        - Process automation (automate time-consuming, error-prone cloud management tasks)
+        - Configuration Management (change tracking)
+        - Update management (create scheduled deployments in maintenance windows)
+  - **App Configuration**
+    - **Azure App Configuration**
+      - Central management of Application Settings and Feature Flags
+      - Fully managed
+      - Tagging with labels, key representations and mappings
+      - Dedicated UI for feature flag management
+      - Encryption at rest and in transit
+      - Complements Azure Key Vault
+      - Poll for changes or use Azure Event Grid
