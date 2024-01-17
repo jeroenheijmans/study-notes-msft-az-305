@@ -5,6 +5,15 @@
     <meta charset="utf-8" />
     <title>{{ page.title }}</title>
     <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: linear-gradient(#f8fafc, #cbd5e1);
+        height: 100vh;
+      }
       nav {
         display: flex;
         gap: 5px;
@@ -19,6 +28,11 @@
       }
       .active {
         background: #fb923c;
+      }
+      main {
+        max-width: 48rem;
+        margin: 10px auto;
+        padding: 10px;
       }
     </style>
   </head>

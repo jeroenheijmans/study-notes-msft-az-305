@@ -1,0 +1,17 @@
+- title: Home
+  link: /
+
+- title: "Identity, Governance, Monitoring"
+  link: /az-305-01-identity-governance-monitoring.html
+
+- title: "Business Continuity"
+  link: /az-305-02-business-continuity.html
+
+- title: "Data Storage"
+  link: /az-305-03-data-storage.html
+
+- title: "Infrastructure"
+  link: /az-305-04-infrastructure.html
+
+- title: "Terminology"
+  link: /az-305-concepts.html
