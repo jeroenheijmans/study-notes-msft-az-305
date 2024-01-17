@@ -4,7 +4,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 - **Azure Compute**
 
-  - Overview (see [flowchart](./assets/images/az-305-infrastructure-compoute-flowchart.png))
+  - Overview (see [flowchart](./assets/images/az-305-infrastructure-compute-flowchart.png))
   - **Azure VMs** (IaaS)
     - Lift and Shift Migrations without containerization
     - New workloads requiring full control
