@@ -47,7 +47,9 @@ All major terminology in one table.
 | Business Continuity | Backup and Recovery      | Microsoft Azure Backup Server (MABS)             |
 | Business Continuity | Backup and Recovery      | System Center Data Protection Manager (DPM)      |
 | Business Continuity | Backup and Recovery      | Locally Redundant Storage (LRS)                  |
-| Business Continuity | Backup and Recovery      | Geo-redundant Storage (GRS)                      |
+| Business Continuity | Backup and Recovery      | Geo Redundant Storage (GRS)                      |
+| Business Continuity | Backup and Recovery      | Geo-zone Redundant Storage (GZRS)                |
+| Business Continuity | Backup and Recovery      | Zone Redundant Storage (ZRS)                     |
 | Business Continuity | Backup and Recovery      | Storage Service Encryption (SSE)                 |
 | Business Continuity | Backup and Recovery      | Cross Region Restore (CRR)                       |
 | Business Continuity | Backup and Recovery      | Point-in-Time Restore (PITR)                     |
@@ -55,6 +57,23 @@ All major terminology in one table.
 | Business Continuity | Backup and Recovery      | Business Continuity and Disaster Recovery (BCDR) |
 | Business Continuity | Backup and Recovery      | Azure Backup                                     |
 | Business Continuity | Backup and Recovery      | Azure Site Recovery                              |
+| Data Storage        | Non-relational data      | Azure Storage Account                            |
+| Data Storage        | Non-relational data      | Azure Blob Storage                               |
+| Data Storage        | Non-relational data      | Azure Files                                      |
+| Data Storage        | Non-relational data      | Azure Managed Disks                              |
+| Data Storage        | Non-relational data      | Azure Queue Storage                              |
+| Data Storage        | Non-relational data      | Write Once, Read Many (WORM)                     |
+| Data Storage        | Non-relational data      | Server Message Block (SMB) protocol              |
+| Data Storage        | Non-relational data      | Network File System (NFS) protocol               |
+| Data Storage        | Non-relational data      | Azure Files REST API                             |
+| Data Storage        | Non-relational data      | Azure Disk Encryption (ADE)                      |
+| Data Storage        | Non-relational data      | Server-Side Encryption (SSE)                     |
+| Data Storage        | Non-relational data      | Encryption at host                               |
+| Data Storage        | Non-relational data      |                                                  |
+| Data Storage        | Non-relational data      |                                                  |
+| Data Storage        | Non-relational data      |                                                  |
+| Data Storage        |                          |                                                  |
+| Data Storage        |                          |                                                  |
 | Data Storage        |                          |                                                  |
 | Data Storage        |                          |                                                  |
 | Data Storage        |                          |                                                  |

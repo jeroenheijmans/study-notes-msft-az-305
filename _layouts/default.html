@@ -9,17 +9,17 @@
       body {
         padding: 0;
         margin: 0;
+        height: 100%;
       }
       body {
         background: linear-gradient(#f8fafc, #cbd5e1);
-        height: 100vh;
       }
       nav {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
         max-width: 54rem;
-        margin: 10px auto;
+        margin: 0 auto;
         padding: 10px;
       }
       nav a {
@@ -35,8 +35,21 @@
       }
       main {
         max-width: 54rem;
-        margin: 10px auto;
+        margin: 0 auto;
         padding: 10px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        border: 1px solid gray;
+        padding: 2px 4px;
+      }
+      thead tr,
+      tbody tr:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
       }
     </style>
   </head>
