@@ -4,7 +4,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 - **Azure Compute**
 
-  - Overview (see [flowchart](./img/az-305-infrastructure-compoute-flowchart.png))
+  - Overview (see [flowchart](./assets/images/az-305-infrastructure-compoute-flowchart.png))
   - **Azure VMs** (IaaS)
     - Lift and Shift Migrations without containerization
     - New workloads requiring full control
@@ -236,7 +236,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Virtual Network Connections to Azure
       - Relies on hub-spoke network topology
       - Supports ExpressRoute and VPN Gateway
-  - **Load balancing** ([see flowchart](./img/az-305-infrastructure-load-balancing-flowchart.png))
+  - **Load balancing** ([see flowchart](./assets/images/az-305-infrastructure-load-balancing-flowchart.png))
     - Aspects
       - Traffic type https? Public or private facing?
       - Global vs regional?
@@ -257,7 +257,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
         - Distribute traffic across regions
         - High Availability
         - Prioritization, weighted distribution, performance-based, geographic, subnet-based
-        - Usually not for HTTPS traffic ([see flowchart](./img/az-305-infrastructure-load-balancing-flowchart.png))
+        - Usually not for HTTPS traffic ([see flowchart](./assets/images/az-305-infrastructure-load-balancing-flowchart.png))
       - **Azure Load Balancer**
         - Layer 4 load-balancing (UDP and TCP)
         - High performance, low-latency

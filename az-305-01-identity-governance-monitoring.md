@@ -31,7 +31,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Can automatically remediate
       - To be combined with RBAC
     - Role-Based Access Control (RBAC)
-      - See [flowchart](./img/az-305-governance-rbac-flowchart.png)
+      - See [flowchart](./assets/images/az-305-governance-rbac-flowchart.png)
     - Resource locks (override user permissions)
       - Applicable for
         - Subscription

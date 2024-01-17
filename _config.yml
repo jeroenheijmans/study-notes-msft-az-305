@@ -5,3 +5,8 @@ plugins:
 relative_links:
   enabled: true
   collections: true
+defaults:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
