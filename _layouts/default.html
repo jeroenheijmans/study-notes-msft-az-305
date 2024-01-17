@@ -29,11 +29,9 @@
         text-decoration: none;
         color: #1e3a8a;
       }
-      nav a:hover {
-        background: #9ca3af;
-      }
-      .active {
-        background: #9ca3af;
+      nav a:hover,
+      nav a:active {
+        background: #d1d5db;
       }
       main {
         max-width: 54rem;
@@ -45,11 +43,7 @@
   <body>
     <nav>
       {% for item in site.data.menu %}
-      <a
-        class="{% if page.url == item.link %}active{% endif %}"
-        href="{{item.link}}"
-        >{{item.title}}</a
-      >
+      <a href="{{item.link}}">{{item.title}}</a>
       {% endfor %}
     </nav>
     <main>
