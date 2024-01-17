@@ -64,7 +64,83 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 - **Data storage for relational data**
 
-  - TODO
+  - SQL Variants
+    - **Azure SQL Database**
+      - Pricing options
+        - Database Transaction Unit (DTU) model
+          - Simple, pre-configured
+          - Bundled measure of compute, storage, and IO
+          - Not available for Managed Instances
+        - vCore model
+          - Independent scalability of compute, storage, and IO
+          - Flexible and transparent
+          - Recommended option
+        - Serverless
+          - Compute tier for single databases
+          - Bills only for amount of compute used
+        - NOTE: Elastic Pools allow combining pricing of multiple databases
+    - **Managed Instance**
+      - Good for "Lift & Shift"
+      - PaaS, always uses vCores mode
+      - All databases share the same vCores
+      - Supports SQL Server Agent
+      - Supports Common language runtime (CLR)
+      - Supports Database Mail
+      - Supports Distributed transactions
+      - Supports Machine Learning Services
+      - Supports Service Broker
+      - Supports Linked servers
+      - **SQL Server on Azure Virtual Machines**
+        - Full SQL Server capabilities
+        - You're fully responsible for OS and SQL Server
+  - **Scaling options**
+    - Vertical Scaling
+      - Elastic Pools
+      - DTU model requires Basic, Standard, or Premium tier
+      - vCore model requires General Purpose or Business Critical tier
+    - Horizontal Scaling
+      - Sharding: partition data across multiple SQL Databases
+      - Read scale-out: partition workload across SQL Databases
+      - Availability depends on database type and pricing tier
+  - **Availability options**
+    - General Purpose (or Standard)
+      - Gateway
+      - Remote storage (except tempdb for primary replica)
+      - Data and log files in Azure Premium Storage (LRS), multiple copies
+      - Backup files in Azure Standard Storage (RA-GRS)
+      - Failover similar to FCI
+    - Business Critical (or Premium)
+      - Equivalent to Always On Availability Group)
+      - Data and log files all on local SSD (for latency improvements)
+      - Three secondary replicas
+    - Hyperscale
+      - Only for Azure SL Database
+      - Tiered caches and page servers
+      - Up to 100 TB databases
+      - Snapshots for near-instantaneous backups
+      - Restores take minutes (instead of hours or days)
+  - **Security of Data**
+    - Data at rest: Transparent data encryption (TDE)
+      - Enabled for all new instances
+      - Encryption at page level
+      - Encryption and decryption when writing and reading from disk
+      - Database Encryption Key (DEK)
+        - Service-managed (built-in server certificate)
+        - Customer-managed
+    - Data in motion: SSL/TLS
+      - optionally add VPN if communicating with on-premises
+    - Data in process: Dynamic data masking
+      - Policy based
+      - Masks result sets of queries
+      - Configured through portal, PowerShell, or REST API
+  - **Azure SQL Edge**
+    - Containerized Linux application, small startup memory footprint (<500MB)
+    - Supports data streams in real time
+    - Connected deployment with Azure IoT Edge
+    - Disconnected deployment as standalone container or in a cluster
+  - **Azure Cosmos DB Table Storage**
+    - Single-digit millisecond response times
+    - Migration from Azure Table Storage is easy (recommended)
 
 - **Data integration**
   - TODO

@@ -69,9 +69,16 @@ All major terminology in one table.
 | Data Storage        | Non-relational data      | Azure Disk Encryption (ADE)                      |
 | Data Storage        | Non-relational data      | Server-Side Encryption (SSE)                     |
 | Data Storage        | Non-relational data      | Encryption at host                               |
-| Data Storage        | Non-relational data      |                                                  |
-| Data Storage        | Non-relational data      |                                                  |
-| Data Storage        | Non-relational data      |                                                  |
+| Data Storage        | Relational data          | Azure Hybrid Benefit                             |
+| Data Storage        | Relational data          | Azure SQL Database                               |
+| Data Storage        | Relational data          | Database Transaction Unit (DTU)                  |
+| Data Storage        | Relational data          | Virtual Core (vCore)                             |
+| Data Storage        | Relational data          | Azure SQL Managed Instance                       |
+| Data Storage        | Relational data          | Transparent data encryption (TDE)                |
+| Data Storage        | Relational data          | Dynamic data masking                             |
+| Data Storage        | Relational data          | Database Encryption Key (DEK)                    |
+| Data Storage        | Relational data          | Azure SQL Edge                                   |
+| Data Storage        | Relational data          | Azure Cosmos DB                                  |
 | Data Storage        |                          |                                                  |
 | Data Storage        |                          |                                                  |
 | Data Storage        |                          |                                                  |
