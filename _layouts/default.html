@@ -30,7 +30,7 @@
         color: #1e3a8a;
       }
       nav a:hover,
-      nav a:active {
+      nav a.active {
         background: #d1d5db;
       }
       main {
@@ -43,14 +43,13 @@
   <body>
     <nav>
       {% for item in site.data.menu %}
-      <a href="{{item.link}}">{{item.title}}</a>
+      <a
+        class="{% if page.url contains item.link %}active{% endif %}"
+        href="{{item.link}}"
+        >{{item.title}}</a
+      >
       {% endfor %}
     </nav>
-    <main>
-      <h1>{{ site.title | default: site.github.repository_name }}</h1>
-      <p>{{ site.description | default: site.github.project_tagline }}</p>
-      <hr />
-      {{ content }}
-    </main>
+    <main>{{ content }}</main>
   </body>
 </html>
