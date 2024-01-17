@@ -1,0 +1,8 @@
+title: AZ-305 Study Notes by Jeroen Heijmans
+description: These are notes taken while studying for AZ-305. Use at your own risk.
+theme: jekyll-theme-midnight
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
