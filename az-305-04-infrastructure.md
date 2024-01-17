@@ -1,6 +1,6 @@
 # AZ-305: Infrastructure
 
-All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions//) starting point.
+All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions/) starting point.
 
 - **Azure Compute**
 

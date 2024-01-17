@@ -3,6 +3,8 @@
 Some personal (but public) notes from studying for AZ-305.
 Note that these were created in Q1 2024 and might be outdated when you read them
 
+This repo is also served on [jeroenheijmans.github.io/study-notes-msft-az-305](https://jeroenheijmans.github.io/study-notes-msft-az-305/).
+
 ## Notes per topic
 
 Divided into the categories that Microsoft uses to divide up AZ-305 topics:

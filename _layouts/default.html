@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <style>
+      nav {
+        display: flex;
+        gap: 5px;
+      }
+      nav a {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #ffedd5;
+      }
+      nav a:hover {
+        background: #f97316;
+      }
+      .active {
+        background: #fb923c;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      {% for item in site.data.menu %}
+      <a
+        class="{% if page.url == item.link %}active{% endif %}"
+        href="{{item.link}}"
+        >{{item.title}}</a
+      >
+      {% endfor %}
+    </nav>
+    <main>
+      <h1>{{ site.title | default: site.github.repository_name }}</h1>
+      <p>{{ site.description | default: site.github.project_tagline }}</p>
+      <hr />
+      {{ content }}
+    </main>
+  </body>
+</html>
