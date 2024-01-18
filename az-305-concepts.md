@@ -79,22 +79,20 @@ All major terminology in one table.
 | Data Storage        | Relational data          | Database Encryption Key (DEK)                    |
 | Data Storage        | Relational data          | Azure SQL Edge                                   |
 | Data Storage        | Relational data          | Azure Cosmos DB                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
-| Data Storage        |                          |                                                  |
+| Data Storage        | Data integration         | Azure Data Factory                               |
+| Data Storage        | Data integration         | Azure Databricks                                 |
+| Data Storage        | Data integration         | AzureHDInsight Hadoop                            |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
+| Data Storage        | Data integration         |                                                  |
 | Infrastructure      | Azure Compute            | High Performance Computing (HPC)                 |
 | Infrastructure      | Azure Compute            | Commercial off the Shelf (COTS) apps             |
 | Infrastructure      | Azure Compute            | Azure Batch                                      |

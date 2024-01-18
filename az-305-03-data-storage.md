@@ -143,4 +143,12 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Migration from Azure Table Storage is easy (recommended)
 
 - **Data integration**
-  - TODO
+  - **Azure Data Factory**
+    - ETL data integration process
+    - pipelines of ingested data into a single data store
+    - Steps
+      - Step 1: Connect and collect. Ingest data.
+      - Step 2: Transform and enrich. E.g. with Databricks or HDInsight Hadoop.
+      - Step 3: CI/CD and publishing.
+      - Step 4: Monitor.
+  - TODO: Work in progress.
