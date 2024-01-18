@@ -34,7 +34,11 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Azure Compute and Networking
 
-TODO
+- Virtual Machines
+  - Virtual Machine Scale Set: group of identical, load-balanced VM's
+  - Virtual Machine Availability Set: staggered updates and varied power/network connectivity
+    - Update domain (VM's to be rebooted at the same time)
+    - Fault domain (VM's will share power source and network switch)
 
 ## Azure Storage Services
 

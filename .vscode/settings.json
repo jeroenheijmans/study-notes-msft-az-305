@@ -8,6 +8,7 @@
     "BCDR",
     "Citus",
     "clickstreams",
+    "colocation",
     "containerizable",
     "dashboarding",
     "Datacenter",

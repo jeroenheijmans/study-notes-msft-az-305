@@ -9,6 +9,19 @@ All major terminology in one table.
 | AZ-305              | General                  | Function as a Service (FaaS)                     |
 | AZ-305              | Prerequisites            | Sovereign Region                                 |
 | AZ-305              | Prerequisites            | Region Pairs                                     |
+| AZ-305              | Prerequisites            | Virtual Machine                                  |
+| AZ-305              | Prerequisites            | Virtual Machine Scale Set                        |
+| AZ-305              | Prerequisites            | Update Domain                                    |
+| AZ-305              | Prerequisites            | Fault Domain                                     |
+| AZ-305              | Prerequisites            | Azure Virtual Desktop                            |
+| AZ-305              | Prerequisites            | Azure App Service                                |
+| AZ-305              | Prerequisites            | Virtual Network                                  |
+| AZ-305              | Prerequisites            | User-Defined Routes (UDR)                        |
+| AZ-305              | Prerequisites            | Active/standby                                   |
+| AZ-305              | Prerequisites            | Active/active                                    |
+| AZ-305              | Prerequisites            | Azure DNS                                        |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
 | AZ-305              | Prerequisites            |                                                  |
 | AZ-305              | Prerequisites            |                                                  |
 | AZ-305              | Prerequisites            |                                                  |
