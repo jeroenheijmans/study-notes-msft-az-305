@@ -7,6 +7,21 @@ All major terminology in one table.
 | AZ-305              | General                  | Infrastructure as a Service (IaaS)               |
 | AZ-305              | General                  | Platform as a Service (PaaS)                     |
 | AZ-305              | General                  | Function as a Service (FaaS)                     |
+| AZ-305              | Prerequisites            | Sovereign Region                                 |
+| AZ-305              | Prerequisites            | Region Pairs                                     |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            |                                                  |
 | Governance          | Governance               | Tenant                                           |
 | Governance          | Governance               | Management Group                                 |
 | Governance          | Governance               | Subscription                                     |

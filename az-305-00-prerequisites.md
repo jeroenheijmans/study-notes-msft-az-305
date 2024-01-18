@@ -4,7 +4,33 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Core Architectural Components
 
-TODO
+- Azure Physical Infrastructure
+
+  - Datacenter
+  - Region containing 1 or more Datacenters
+  - Availability zones: physically separate Datacenters within a Region
+  - Region Pairs: 300+ miles apart
+  - Sovereign Regions: for US Government and China
+
+- Azure Account
+  - Account
+    - Requires at least 1 subscription
+  - Subscriptions
+    - Unit of management, billing, and scale
+    - Boundaries
+      - Billing boundary
+      - Access control boundary
+    - Typical usages
+      - DTAP
+      - Organizational structure
+      - Billing purposes
+  - Resource Groups
+    - Is purely for grouping resources
+  - Resources
+    - Always belong to 1 Resource Group
+  - Management group
+    - Hierarchy to apply policies for governance
+    - User access to multiple subscriptions
 
 ## Azure Compute and Networking
 
