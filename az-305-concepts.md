@@ -20,8 +20,12 @@ All major terminology in one table.
 | AZ-305              | Prerequisites            | Active/standby                                   |
 | AZ-305              | Prerequisites            | Active/active                                    |
 | AZ-305              | Prerequisites            | Azure DNS                                        |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
+| AZ-305              | Prerequisites            | Locally redundant storage (LRS)                  |
+| AZ-305              | Prerequisites            | Geo-redundant storage (GRS)                      |
+| AZ-305              | Prerequisites            | Read-access geo-redundant storage (RA-GRS)       |
+| AZ-305              | Prerequisites            | Zone-redundant storage (ZRS)                     |
+| AZ-305              | Prerequisites            | Geo-zone-redundant storage (GZRS)                |
+| AZ-305              | Prerequisites            | Read-access geo-zone-redundant storage (RA-GZRS) |
 | AZ-305              | Prerequisites            |                                                  |
 | AZ-305              | Prerequisites            |                                                  |
 | AZ-305              | Prerequisites            |                                                  |
@@ -74,10 +78,6 @@ All major terminology in one table.
 | Business Continuity | Backup and Recovery      | Microsoft Azure Recovery Services (MARS)         |
 | Business Continuity | Backup and Recovery      | Microsoft Azure Backup Server (MABS)             |
 | Business Continuity | Backup and Recovery      | System Center Data Protection Manager (DPM)      |
-| Business Continuity | Backup and Recovery      | Locally Redundant Storage (LRS)                  |
-| Business Continuity | Backup and Recovery      | Geo Redundant Storage (GRS)                      |
-| Business Continuity | Backup and Recovery      | Geo-zone Redundant Storage (GZRS)                |
-| Business Continuity | Backup and Recovery      | Zone Redundant Storage (ZRS)                     |
 | Business Continuity | Backup and Recovery      | Storage Service Encryption (SSE)                 |
 | Business Continuity | Backup and Recovery      | Cross Region Restore (CRR)                       |
 | Business Continuity | Backup and Recovery      | Point-in-Time Restore (PITR)                     |
