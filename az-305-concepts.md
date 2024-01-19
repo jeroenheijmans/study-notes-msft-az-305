@@ -26,19 +26,6 @@ All major terminology in one table.
 | AZ-305              | Prerequisites            | Zone-redundant storage (ZRS)                     |
 | AZ-305              | Prerequisites            | Geo-zone-redundant storage (GZRS)                |
 | AZ-305              | Prerequisites            | Read-access geo-zone-redundant storage (RA-GZRS) |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
-| AZ-305              | Prerequisites            |                                                  |
 | Governance          | Governance               | Tenant                                           |
 | Governance          | Governance               | Management Group                                 |
 | Governance          | Governance               | Subscription                                     |
