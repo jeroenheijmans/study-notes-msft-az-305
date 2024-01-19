@@ -49,6 +49,7 @@ All major terminology in one table.
 | Governance          | Governance               | RBAC                                             |
 | Governance          | Governance               | Landing Zone                                     |
 | Governance          | Identity                 | IAM                                              |
+| Governance          | Identity                 | Microsoft Entra ID                               |
 | Governance          | Identity                 | Microsoft Entra ID B2B                           |
 | Governance          | Identity                 | Azure AD B2C                                     |
 | Governance          | Identity                 | Conditional Access                               |

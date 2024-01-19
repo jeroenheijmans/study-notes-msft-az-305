@@ -163,7 +163,52 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Azure Identity, Access, and Security
 
-TODO
+- Microsoft Entra ID
+
+  - Services
+    - Authentication
+    - Single sign-on (SSO)
+    - Application Management
+    - Device Management
+  - Microsoft Entra Connect
+    - Synchronize on-premises Active Directory
+
+- Microsoft Entra Domain Services
+
+  - Managed domain services
+  - LDAP, Kerberos/NTLM
+  - Helps with Lift & Shift of legacy
+  - Integrates with existing Microsoft Entra tenant
+
+- External Identities
+
+  - B2B
+  - B2B direct connect (two-way trust)
+  - B2C
+
+- Conditional Access
+
+  - Granular multi-factor authentication
+  - Purposes
+    - Require MFA depending on user properties
+    - Require access through specific clients
+    - Requires access only from managed devices
+    - Block access if suspicious
+
+- Role-based Access Control
+
+  - Allow model
+  - Scopes
+    - Management group
+    - Subscription
+    - Resource group
+    - Resource
+
+- Zero trust (no notes)
+
+- Defense-in-depth (no notes)
+
+- Microsoft Defender for Cloud (no notes)
 
 ## Microsoft Cloud Adoption Framework for Azure
 
