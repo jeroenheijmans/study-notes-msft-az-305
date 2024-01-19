@@ -212,8 +212,8 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Microsoft Cloud Adoption Framework for Azure
 
-TODO
+See: [Infrastructure](./az-305-04-infrastructure.md)
 
 ## Microsoft Azure Well-Architected Framework
 
-TODO
+See: [Infrastructure](./az-305-04-infrastructure.md)
