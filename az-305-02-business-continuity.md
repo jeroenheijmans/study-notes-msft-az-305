@@ -4,9 +4,13 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## High Availability and Disaster Recovery (HADR)
 
-- Recovery Time Objective: maximum time available to recover
-- Recovery Point Objective: maximum data loss after recovery
+- Recovery characteristics
+
+  - **Recovery Time Objective (RTO)**: maximum time available to recover
+  - **Recovery Point Objective (RPO)**: maximum data loss after recovery
+
 - **IaaS HADR**
+
   - **SQL Server HADR**
     - **Always on Failover Cluster Instance (FCI)**
       - protects instance
@@ -42,7 +46,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Guarantees replica in different region
       - Monthly RTO of 2 hours
       - No transaction guarantees for VM's running SQL Server
+
 - **PaaS HADR**
+
   - SQL Server
     - Active geo-replication (Azure SQL Database)
     - Auto-failover Groups (Azure SQL Database or Azure SQL Database Managed Instance)
@@ -52,7 +58,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Azure Database for PostgreSQL
     - Similar to MySQL
     - Scale-out hyperscale "Citus" is another option (creates replicas, so more expensive)
+
 - **Hybrid HADR**
+
   - Transactional Replication from on-premises to Azure SQL Managed Instance (but not other way around)
   - Availability Group between on premises and in Azure
     - needs ExpressRoute or site-to-site VPN
@@ -61,6 +69,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 ## Backup and Disaster Recovery
 
 - Considerations
+
   - What are your workloads? (distinct, logically separate capability or task)
   - What are usage patterns? (e.g. prime time)
   - What are the availability metrics?
@@ -73,12 +82,14 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - What workload availability targets?
     - SLA's for each workload
   - What are the SLAs?
+
 - **Azure Backup**
+
   - Backup Types
     - On-premises
-      - Microsoft Azure Recovery Services (MARS) agent: files, folders, system state
-      - System Center Data Protection Manager (DPM)
-      - Microsoft Azure Backup Server (MABS) agent: Hyper-V and VMware virtual machines
+      - **Microsoft Azure Recovery Services (MARS) agent**: files, folders, system state
+      - **System Center Data Protection Manager (DPM)**
+      - **Microsoft Azure Backup Server (MABS) agent**: Hyper-V and VMware virtual machines
     - Azure Virtual Machines
       - Entire Machines (Windows or Linux)
       - Files, folders, and system state (with MARS agent)
@@ -112,13 +123,13 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
         - Self-service restore (via Volume Shadow Copy Service, VSS)
         - On-demand backups can add to scheduled backups
   - Virtual Machine Backup and Recovery
-    - Azure Backup
+    - **Azure Backup**
       - Specialized offering for database workloads (e.g. SQL Server)
       - Step 1 = VM Snapshot, Step 2 = snapshot into recovery services vault
       - Encrypted at rest with Storage Service Encryption (SSE)
       - Recommend at least "v2 storage" account to prevent throttling
       - Cross Region Restore (CRR) is opt-in for any Recovery Services vault.
-  - Azure SQL Backup and Recovery
+  - **Azure SQL Backup and Recovery**
     - SQL Database and SQL Managed Instance
       - Full backups (every week)
       - Differential Backups (every 12-24 hours)
@@ -128,7 +139,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Restore deleted database to time of deletion
       - Restore database to another geographic region
       - Restore database from long-term backup, if Long-Term Retention (LTR) is set up
+
 - **Azure Site Recovery**
+
   - Features
     - Replicate Azure VM's, also to a secondary region continuously
     - Replicate on-premises VM's

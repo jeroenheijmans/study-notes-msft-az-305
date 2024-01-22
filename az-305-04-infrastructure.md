@@ -5,16 +5,18 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 ## Azure Compute
 
 - Overview (see [flowchart](./assets/images/az-305-infrastructure-compute-flowchart.png))
+
 - **Azure VMs** (IaaS)
+
   - Lift and Shift Migrations without containerization
   - New workloads requiring full control
   - Classifications (tiers)
-    - General purpose: balanced CPU-to-memory (test and dev, or small-to-medium scenarios)
-    - Compute optimized: high CPU (web servers, network appliances, batch processes)
-    - Memory optimized: high memory (relational database servers, caches, etc)
-    - Storage optimized: high disk throughput and I/O (database servers)
-    - GPU: graphics rendering and video editing, and e.g. deep learning
-    - High performance computes: high CPU and optional high-throughput network (high performance scenarios)
+    - **General purpose**: balanced CPU-to-memory (test and dev, or small-to-medium scenarios)
+    - **Compute optimized**: high CPU (web servers, network appliances, batch processes)
+    - **Memory optimized**: high memory (relational database servers, caches, etc)
+    - **Storage optimized**: high disk throughput and I/O (database servers)
+    - **GPU**: graphics rendering and video editing, and e.g. deep learning
+    - **High performance computes**: high CPU and optional high-throughput network (high performance scenarios)
   - Costs
     - Compute: priced hourly, billed per minute of use
     - Storage: charged for Storage used by disks
@@ -22,7 +24,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Windows (OS license included)
     - Linux
     - Azure Marketplace for OS image with tools (e.g. WordPress)
+
 - **Azure Batch** (PaaS)
+
   - Cloud optimized HPC workloads (up to thousands of VM's)
   - Good for parallel workloads
   - Good for tightly coupled workloads where apps need to communicate
@@ -31,7 +35,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Can use pooling (allocate pools with multiple nodes and/or isolated VM sizes for guaranteed progress)
   - Optimize jobs and tasks
   - Has [best practices guidance](https://learn.microsoft.com/en-us/azure/batch/best-practices)
+
 - **Azure App Service** (PaaS)
+
   - Cloud optimized HTTP-based service
   - For web apps, background jobs (WebJobs), mobile backends, REST APIs
   - Supports ASP.NET, ASP.NET Core, Java, Ruby, NodeJS, PHP, Python
@@ -40,7 +46,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Allows for [built-in auth ("Easy Auth")](https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)
   - Deployment slots for DTAP (Standard App Service Plan or higher)
   - App Service Plan for costs
+
 - **Azure Functions** (FaaS)
+
   - Event-driven workloads with short-lived processes (Code First)
   - C#, Java, JavaScript, PowerShell, Python
   - Avoid long-running functions
@@ -50,19 +58,25 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Group functions with different load profiles
   - Defensive coding needed
   - Separate storage account for each function application
+
 - **Azure Logic Apps** (FaaS)
+
   - Event-driven workloads with short-lived processes (Design First)
   - Part of "Azure Integration Services"
   - Best if it has external connections
   - Might have slow activation time
+
 - **Azure Container Instances** (PaaS)
+
   - Cloud-optimized microservices
   - Lift and shift if your workload can be containerized
   - Fast startup, per-second billing, persistent storage (e.g. via Azure Files shares)
   - Container Group (e.g. front-end container grouped with back-end, or app container with monitoring container)
   - Best practices
     - Private registry (Docker Trusted Registry or Azure Container Registry)
+
 - **Azure Kubernetes Service (AKS)** (PaaS)
+
   - Full-fledged orchestration for cloud-optimized containerizable microservices
   - Container Management (organize and change containers)
   - Container Orchestration (dynamically adjust number of instances, automatically update running instances)
@@ -82,6 +96,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 ## Application Architecture
 
 - **Messages**
+
   - Raw data itself in messages
   - Expectations between producer and consumer
   - Allows for guaranteed communication
@@ -106,7 +121,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Publish-Subscribe Topics
       - Multiple subscribers possible
       - Each subscriber receives a copy of the message
+
 - **Events**
+
   - Light-weight broadcasts
   - Publish / Subscribe model
   - Zero to many subscribers possible
@@ -139,7 +156,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Uploading files from devices
       - Request-reply methods to control devices from the cloud
       - Device creation, connection, and failure tracking
+
 - **Caching**
+
   - **Azure Cache for Redis**
     - Low-latency, high-throughput
     - Either Redis Open Source (OSS Redis) or Redis Enterprise (managed)
@@ -149,14 +168,18 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Session store (e.g. user sessions)
       - Message broker (supports distributed queue)
       - Distributed transactions (batch of commands in single transaction)
+
 - **Azure API Management**
+
   - Suitable when you have
     - Large number of APIs
     - High rate of API changes
     - High API administration load (e.g. policies for quotas, rate limits, request transformations and validation)
     - Need to standardize disparate APIs
     - Need for enhanced API security
+
 - **App Deployments**
+
   - **Azure Resource Manager (ARM) templates**
     - Declarative approach
     - Idempotent
@@ -172,7 +195,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Process automation (automate time-consuming, error-prone cloud management tasks)
       - Configuration Management (change tracking)
       - Update management (create scheduled deployments in maintenance windows)
+
 - **App Configuration**
+
   - **Azure App Configuration**
     - Central management of Application Settings and Feature Flags
     - Fully managed
@@ -184,12 +209,17 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Network Solutions
 
-- Network requirements (naming, regions, subscriptions, IP addresses, segmentation and subnets, filtering)
-- Workload requirements (CIDR ranges, network security groups, network traffic routing)
-- IP range for Virtual Networks /16 or larger
-- Consider hub-spoke network topology
+- Considerations
+
+  - Network requirements (naming, regions, subscriptions, IP addresses, segmentation and subnets, filtering)
+  - Workload requirements (CIDR ranges, network security groups, network traffic routing)
+  - IP range for Virtual Networks /16 or larger
+  - Consider hub-spoke network topology
+
 - **Azure Firewall** (works across Azure Virtual Network and subscriptions)
+
 - Network design options
+
   - **Pattern 1: Single Virtual Network**
     - Single-region only
     - Network Security Groups or Application Security Groups
@@ -202,24 +232,28 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - One Virtual Network is the hub in a region
     - Connect spokes to their hub with peering
     - Connect hubs across regions with peering
+
 - **Routing**
-  - Route Tables
-    - System Routes (can't be modified, can be overridden with UDRs)
+
+  - **Route Tables**
+    - **System Routes** (can't be modified, can be overridden with UDRs)
       - Traffic between VM's
       - Virtual network-to-network VPN for VM's
       - Site-to-site through Azure ExpressRoute or Azure VPN Gateway
-    - User-defined Routes, a.k.a. custom routes
+    - **User-defined Routes**, a.k.a. custom routes
       - Filtering of internet traffic or forced tunneling
       - Flow traffic through NVA
       - Define routes to direct traffic and hops
     - Routes from other Virtual Networks (when peering networks)
-    - Border Gateway Protocol routes (when on-premises network gateway exchanges BGP routes)
+    - **Border Gateway Protocol** routes (when on-premises network gateway exchanges BGP routes)
     - Service endpoint routes (when enabling a service endpoint in a subnet)
-  - Azure Virtual Network NAT
+  - **Azure Virtual Network NAT**
     - Fully managed, highly resilient
     - All outbound connectivity through specified static public IP addresses
     - No load balancer or public IP for VM's needed
+
 - Connect on-premises to Azure
+
   - **Azure VPN Gateway**
     - Encrypted traffic between Azure Virtual Network and on-premises network
     - Over the public internet
@@ -236,7 +270,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Virtual Network Connections to Azure
     - Relies on hub-spoke network topology
     - Supports ExpressRoute and VPN Gateway
+
 - **Load balancing** ([see flowchart](./assets/images/az-305-infrastructure-load-balancing-flowchart.png))
+
   - Aspects
     - Traffic type https? Public or private facing?
     - Global vs regional?
@@ -268,6 +304,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Web traffic load balancer
       - Application Delivery Controller (ADC) as a service
       - Path-based routing and Multiple-site routing
+
 - Application Protection Services
   - **Azure DDoS Protection**
     - Traffic monitoring and DDoS protection
@@ -300,6 +337,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 ## Migrations
 
 - **Cloud Adoption Framework** (CAF)
+
   - Initial phases
     - **Define strategy**
       - Understand motivations
@@ -334,7 +372,9 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - Business risks
       - Policy and compliance
       - Governance maturity
+
 - **Azure Migration Framework**
+
   - Stage 1: Assess on-premises environment
     - Five Rs of Rationalization
       - **Rehost** a.k.a. "Lift and Shift"

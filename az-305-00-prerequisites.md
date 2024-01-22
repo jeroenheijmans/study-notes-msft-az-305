@@ -4,18 +4,19 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
 
 ## Core Architectural Components
 
-- Azure Physical Infrastructure
+- **Azure Physical Infrastructure**
 
-  - Datacenter
-  - Region containing 1 or more Datacenters
-  - Availability zones: physically separate Datacenters within a Region
-  - Region Pairs: 300+ miles apart
-  - Sovereign Regions: for US Government and China
+  - Regions contain 1 or more Datacenters
+  - Availability zones have physically separate Datacenters within a Region
+  - Region Pairs of datacenters 300+ miles apart
+  - Sovereign Regions are for US Government and China
 
-- Azure Account
-  - Account
+- **Azure Account**
+
+  - **Account**
+    - Needed to do anything on Azure
     - Requires at least 1 subscription
-  - Subscriptions
+  - **Subscriptions**
     - Unit of management, billing, and scale
     - Boundaries
       - Billing boundary
@@ -24,42 +25,45 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
       - DTAP
       - Organizational structure
       - Billing purposes
-  - Resource Groups
-    - Is purely for grouping resources
-  - Resources
+  - **Resource Groups**
+    - Purely for grouping resources
+  - **Resources**
+    - Are individual services, VM's, etc.
     - Always belong to 1 Resource Group
-  - Management group
+  - **Management group**
     - Hierarchy to apply policies for governance
     - User access to multiple subscriptions
 
 ## Azure Compute and Networking
 
-- Virtual Machines
+- **Virtual Machines**
 
-  - Virtual Machine Scale Set: group of identical, load-balanced VM's
-  - Virtual Machine Availability Set: staggered updates and varied power/network connectivity
-    - Update domain (VM's to be rebooted at the same time)
-    - Fault domain (VM's will share power source and network switch)
+  - **Virtual Machine Scale Set**
+    - Group of identical, load-balanced VM's
+  - Virtual Machine Availability Set
+    - Staggered updates and varied power/network connectivity
+      - Update domain (VM's to be rebooted at the same time)
+      - Fault domain (VM's will share power source and network switch)
 
-- Azure Virtual Desktop
+- **Azure Virtual Desktop**
 
   - Cloud-hosted Windows desktop
   - Multi-session support
   - Isolated user sessions
 
-- Containers
+- **Containers**
 
-  - Azure Container Instances: fastest and simplest containers
-  - Azure Container Apps: PaaS offering that can include load balancing and scaling
-  - Azure Kubernetes Service (AKS): orchestrated containers
+  - **Azure Container Instances**: fastest and simplest containers
+  - **Azure Container Apps**: PaaS offering that can include load balancing and scaling
+  - **Azure Kubernetes Service (AKS)**: orchestrated containers
 
-- Azure Functions
+- **Azure Functions**
 
   - Serverless, event-driven
   - Scale on demand
   - Stateless (default) or stateful
 
-- Application Hosting
+- **Application Hosting**
 
   - Azure App Service
   - Web apps (.NET, Java, Ruby, NodeJS, PHP, python - on Windows or Linux)
@@ -67,7 +71,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Mobile back-ends
   - REST APIs
 
-- Virtual Networking
+- **Virtual Networking**
 
   - Isolation and segmentation: private IP address space
   - Name resolution from Azure or external DNS server
@@ -77,25 +81,25 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
   - Routing traffic
   - Filtering traffic
   - Connect multiple virtual networks (e.g. through peering)
-  - User-Defined Routes (UDR)
+  - _User-Defined Routes (UDR)_
 
-- Azure Virtual Private Networks (VPNs)
+- **Azure Virtual Private Networks** (VPNs)
 
-  - VPN Gateway
+  - **Azure VPN Gateway**
     - Connectivity
-      - Site-to-site: on-premises datacenter
-      - Point-to-site: individual device
-      - Network-to-network: virtual network
+      - **Site-to-site**: on-premises datacenter
+      - **Point-to-site**: individual device
+      - **Network-to-network**: virtual network
     - Type
-      - Policy-based: IP address based
-      - Route-based: IPSec tunnels (preferred to connect on-premises devices)
+      - **Policy-based**: IP address based
+      - _Route-based_: IPSec tunnels (preferred to connect on-premises devices)
     - High availability options
-      - Active/standby (to account for maintenance in Azure)
-      - Active/active (using BGP routing protocol, multiple active public IP's for gateway)
-      - ExpressRoute failover
+      - **Active/standby** (to account for maintenance in Azure)
+      - **Active/active** (using BGP routing protocol, multiple active public IP's for gateway)
+      - **ExpressRoute failover**
       - Zone-redundant gateways
 
-- Azure ExpressRoute
+- **Azure ExpressRoute**
 
   - Benefits
     - Connectivity to all cloud services
@@ -108,23 +112,24 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Any-to-any connection
     - Directly from ExpressRoute sites
 
-- Azure DNS
+- **Azure DNS**
+
   - Supports private DNS domains
   - Supports Alias record sets
 
 ## Azure Storage Services
 
-- Storage Account
+- **Storage Account**
 
   - Unique namespace
-  - Tiers
+  - **Tiers**
     - Standard General Purpose v2: recommended for most cases
     - Premium block blobs: for high transaction rates and low storage latency
     - Premium file shares: for high performance SMB and NFS shares
     - Premium page blobs: for page blobs only
   - Services
     - Blobs (text and binary data)
-      - Tiers
+      - **Tiers**
         - Hot: frequently accessed data (e.g. images)
         - Cool: infrequently accessed, stored at least 30 days (e.g. invoices)
         - Cold: infrequently accessed, stored at least 90 days
@@ -140,53 +145,53 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Azure Storage Explorer
     - Azure File Sync
 
-- Redundancy options
+- **Redundancy options**
 
-  - Locally redundant storage (LRS)
+  - **Locally redundant storage (LRS)**
     - Replicate data 3 times in one data center in primary region
     - SLA: 11 nines (99.999999999%) of objects over a given year
-  - Zone-redundant storage (ZRS)
+  - **Zone-redundant storage (ZRS)**
     - Replicate synchronously across 3 availability zones in primary region
     - SLA: 12 nines (99.9999999999%) over a given year
-  - Geo-redundant storage (GRS)
+  - **Geo-redundant storage (GRS)**
     - Similar to LRS in two regions
     - SLA: 16 nines (99.99999999999999%) over a given year
-  - Geo-zone-redundant storage (GZRS)
+  - **Geo-zone-redundant storage (GZRS)**
     - Similar to ZRS in primary and LRS in secondary region
     - SLA: 16 nines (99.99999999999999%) of durability of objects over a given year
-  - Read-access geo-redundant storage (RA-GRS)
-  - Read-access geo-zone-redundant storage (RA-GZRS)
+  - **Read-access geo-redundant storage (RA-GRS)**
+  - **Read-access geo-zone-redundant storage (RA-GZRS)**
 
-- Azure Migrate: see later modules in AZ-305
+- **Azure Migrate**: see later modules in AZ-305
 
-- Azure Data Box: see later modules in AZ-305
+- **Azure Data Box**: see later modules in AZ-305
 
 ## Azure Identity, Access, and Security
 
-- Microsoft Entra ID
+- **Microsoft Entra ID**
 
   - Services
     - Authentication
     - Single sign-on (SSO)
     - Application Management
     - Device Management
-  - Microsoft Entra Connect
+  - **Microsoft Entra Connect**
     - Synchronize on-premises Active Directory
 
-- Microsoft Entra Domain Services
+- **Microsoft Entra Domain Services**
 
   - Managed domain services
   - LDAP, Kerberos/NTLM
   - Helps with Lift & Shift of legacy
   - Integrates with existing Microsoft Entra tenant
 
-- External Identities
+- **External Identities**
 
   - B2B
   - B2B direct connect (two-way trust)
   - B2C
 
-- Conditional Access
+- **Conditional Access**
 
   - Granular multi-factor authentication
   - Purposes
@@ -195,7 +200,7 @@ All notes taken from [the relevant AZ-305 learning path](https://learn.microsoft
     - Requires access only from managed devices
     - Block access if suspicious
 
-- Role-based Access Control
+- **Role-based Access Control (RBAC)**
 
   - Allow model
   - Scopes

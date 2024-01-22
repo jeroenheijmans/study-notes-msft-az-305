@@ -7,25 +7,14 @@ All major terminology in one table.
 | AZ-305              | General                  | Infrastructure as a Service (IaaS)               |
 | AZ-305              | General                  | Platform as a Service (PaaS)                     |
 | AZ-305              | General                  | Function as a Service (FaaS)                     |
-| AZ-305              | Prerequisites            | Sovereign Region                                 |
-| AZ-305              | Prerequisites            | Region Pairs                                     |
-| AZ-305              | Prerequisites            | Virtual Machine                                  |
-| AZ-305              | Prerequisites            | Virtual Machine Scale Set                        |
-| AZ-305              | Prerequisites            | Update Domain                                    |
-| AZ-305              | Prerequisites            | Fault Domain                                     |
-| AZ-305              | Prerequisites            | Azure Virtual Desktop                            |
-| AZ-305              | Prerequisites            | Azure App Service                                |
-| AZ-305              | Prerequisites            | Virtual Network                                  |
-| AZ-305              | Prerequisites            | User-Defined Routes (UDR)                        |
-| AZ-305              | Prerequisites            | Active/standby                                   |
-| AZ-305              | Prerequisites            | Active/active                                    |
-| AZ-305              | Prerequisites            | Azure DNS                                        |
-| AZ-305              | Prerequisites            | Locally redundant storage (LRS)                  |
-| AZ-305              | Prerequisites            | Geo-redundant storage (GRS)                      |
-| AZ-305              | Prerequisites            | Read-access geo-redundant storage (RA-GRS)       |
-| AZ-305              | Prerequisites            | Zone-redundant storage (ZRS)                     |
-| AZ-305              | Prerequisites            | Geo-zone-redundant storage (GZRS)                |
-| AZ-305              | Prerequisites            | Read-access geo-zone-redundant storage (RA-GZRS) |
+| Prerequisites       | Datacenters              | Sovereign Region                                 |
+| Prerequisites       | Datacenters              | Region Pairs                                     |
+| Prerequisites       | Redundancy               | Locally redundant storage (LRS)                  |
+| Prerequisites       | Redundancy               | Geo-redundant storage (GRS)                      |
+| Prerequisites       | Redundancy               | Read-access geo-redundant storage (RA-GRS)       |
+| Prerequisites       | Redundancy               | Zone-redundant storage (ZRS)                     |
+| Prerequisites       | Redundancy               | Geo-zone-redundant storage (GZRS)                |
+| Prerequisites       | Redundancy               | Read-access geo-zone-redundant storage (RA-GZRS) |
 | Governance          | Governance               | Tenant                                           |
 | Governance          | Governance               | Management Group                                 |
 | Governance          | Governance               | Subscription                                     |
@@ -33,7 +22,7 @@ All major terminology in one table.
 | Governance          | Governance               | Resource                                         |
 | Governance          | Governance               | Resource (group) tags                            |
 | Governance          | Governance               | Azure Policy                                     |
-| Governance          | Governance               | RBAC                                             |
+| Governance          | Governance               | Role Based Access Control (RBAC)                 |
 | Governance          | Governance               | Landing Zone                                     |
 | Governance          | Identity                 | IAM                                              |
 | Governance          | Identity                 | Microsoft Entra ID                               |
@@ -76,12 +65,12 @@ All major terminology in one table.
 | Data Storage        | Non-relational data      | Azure Storage Account                            |
 | Data Storage        | Non-relational data      | Azure Blob Storage                               |
 | Data Storage        | Non-relational data      | Azure Files                                      |
+| Data Storage        | Non-relational data      | Azure Files REST API                             |
 | Data Storage        | Non-relational data      | Azure Managed Disks                              |
 | Data Storage        | Non-relational data      | Azure Queue Storage                              |
 | Data Storage        | Non-relational data      | Write Once, Read Many (WORM)                     |
 | Data Storage        | Non-relational data      | Server Message Block (SMB) protocol              |
 | Data Storage        | Non-relational data      | Network File System (NFS) protocol               |
-| Data Storage        | Non-relational data      | Azure Files REST API                             |
 | Data Storage        | Non-relational data      | Azure Disk Encryption (ADE)                      |
 | Data Storage        | Non-relational data      | Server-Side Encryption (SSE)                     |
 | Data Storage        | Non-relational data      | Encryption at host                               |
@@ -109,9 +98,9 @@ All major terminology in one table.
 | Infrastructure      | Azure Compute            | High Performance Computing (HPC)                 |
 | Infrastructure      | Azure Compute            | Commercial off the Shelf (COTS) apps             |
 | Infrastructure      | Azure Compute            | Azure Batch                                      |
-| Infrastructure      | Azure Compute            | App Service                                      |
-| Infrastructure      | Azure Compute            | App Service Plan                                 |
-| Infrastructure      | Azure Compute            | Easy Auth                                        |
+| Infrastructure      | Azure Compute            | Azure App Service                                |
+| Infrastructure      | Azure Compute            | Azure App Service Plan                           |
+| Infrastructure      | Azure Compute            | Azure Easy Auth                                  |
 | Infrastructure      | Azure Compute            | Azure Functions                                  |
 | Infrastructure      | Azure Compute            | Azure Logic Apps                                 |
 | Infrastructure      | Azure Compute            | Azure Integration Services                       |
@@ -121,6 +110,10 @@ All major terminology in one table.
 | Infrastructure      | Azure Compute            | Azure Kubernetes Service (AKS)                   |
 | Infrastructure      | Azure Compute            | Container Management                             |
 | Infrastructure      | Azure Compute            | Container Orchestration                          |
+| Infrastructure      | Azure Compute            | Virtual Machine                                  |
+| Infrastructure      | Azure Compute            | Virtual Machine Scale Set                        |
+| Infrastructure      | Azure Compute            | Update Domain                                    |
+| Infrastructure      | Azure Compute            | Fault Domain                                     |
 | Infrastructure      | Application Architecture | Azure Queue Storage                              |
 | Infrastructure      | Application Architecture | Azure Service Bus                                |
 | Infrastructure      | Application Architecture | Azure Event Grid                                 |
@@ -135,11 +128,10 @@ All major terminology in one table.
 | Infrastructure      | Application Architecture | Azure API Management                             |
 | Infrastructure      | Application Architecture | Azure Resource Manager (ARM)                     |
 | Infrastructure      | Application Architecture | ARM Templates                                    |
-| Infrastructure      | Application Architecture | Bicep                                            |
+| Infrastructure      | Application Architecture | Bicep Templates                                  |
 | Infrastructure      | Application Architecture | Azure App Configuration                          |
 | Infrastructure      | Application Architecture | Azure Automation                                 |
 | Infrastructure      | Application Architecture | Azure IoT Hub                                    |
-| Infrastructure      | Network Solutions        | Virtual Network                                  |
 | Infrastructure      | Network Solutions        | Subnet                                           |
 | Infrastructure      | Network Solutions        | CIDR                                             |
 | Infrastructure      | Network Solutions        | Network Security Groups (NSGs)                   |
@@ -149,6 +141,8 @@ All major terminology in one table.
 | Infrastructure      | Network Solutions        | Network Address Translation (NAT)                |
 | Infrastructure      | Network Solutions        | Azure Virtual Network NAT                        |
 | Infrastructure      | Network Solutions        | Route Tables                                     |
+| Infrastructure      | Network Solutions        | Azure Virtual Network                            |
+| Infrastructure      | Network Solutions        | User-Defined Routes (UDR)                        |
 | Infrastructure      | Network Solutions        | Border Gateway Protocol (BGP)                    |
 | Infrastructure      | Network Solutions        | User-defined routes (UDRs)                       |
 | Infrastructure      | Network Solutions        | Azure ExpressRoute                               |
@@ -165,6 +159,7 @@ All major terminology in one table.
 | Infrastructure      | Network Solutions        | Azure DDoS Protection                            |
 | Infrastructure      | Network Solutions        | Azure Private Link                               |
 | Infrastructure      | Network Solutions        | Azure Firewall                                   |
+| Infrastructure      | Network Solutions        | Azure DNS                                        |
 | Infrastructure      | Migrations               | Microsoft Cloud Adoption Framework (CAF)         |
 | Infrastructure      | Migrations               | Azure Migration Framework (AMF)                  |
 | Infrastructure      | Migrations               | Azure Total Cost of Ownership (TCO)              |
