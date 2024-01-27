@@ -4,7 +4,7 @@
 - title: "Prerequisites"
   link: ./az-305-00-prerequisites.html
 
-- title: "Identity, Governance, Monitoring"
+- title: "Identity & Governance"
   link: ./az-305-01-identity-governance-monitoring.html
 
 - title: "Business Continuity"
